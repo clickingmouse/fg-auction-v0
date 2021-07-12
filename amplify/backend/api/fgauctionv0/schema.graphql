@@ -1,0 +1,71 @@
+type Bid @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  auctions: [AuctionBid] @connection(keyName: "byBid", fields: ["id"])
+  bidAmount: Int
+  bidderID: ID
+}
+
+type PropertyDetail @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  saleableArea: Int
+  grossArea: String
+  buildingAge: String
+  propertyDirection: String
+  propertyView: String
+  photos: AWSJSON
+  video: String
+  VR: String
+  floorplan: String
+  designPlan: String
+  map: AWSJSON
+  valuation: Int
+  startingBid: String
+  address: String
+  prn: String!
+}
+
+type Favorite @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  properties: AWSJSON
+  uid: ID
+}
+
+type Auction @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  AuctionBids: [AuctionBid] @connection(keyName: "byAuction", fields: ["id"])
+  openingBid: Int
+  reservePrice: Int
+  auctionDate: AWSDate
+  auctionStartTime: AWSTime
+  auctionEndTime: AWSTime
+  winningBid: Int
+  bidAmount: Int
+}
+
+type Property @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  prn: String!
+  size: Int
+  bedrooms: Int
+  bathrooms: Int
+  price: Int
+  residential: Boolean
+  publicHousing: Boolean
+  commercial: Boolean
+  industrial: Boolean
+  parking: Boolean
+  location: String
+  codeName: String
+  PropertyDetail: PropertyDetail @connection
+  district: String
+  coverPhoto: String
+}
+
+type AuctionBid @model(queries: null) @key(name: "byAuction", fields: ["auctionID", "bidID"]) @key(name: "byBid", fields: ["bidID", "auctionID"]) @auth(rules: [{allow: public}, {allow: public}]) {
+  id: ID!
+  auctionID: ID!
+  bidID: ID!
+  auction: Auction! @connection(fields: ["auctionID"])
+  bid: Bid! @connection(fields: ["bidID"])
+}
+ 

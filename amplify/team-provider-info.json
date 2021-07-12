@@ -10,6 +10,11 @@
       "StackName": "amplify-fgauctionapp-dev-173949",
       "StackId": "arn:aws:cloudformation:ap-southeast-1:606980312233:stack/amplify-fgauctionapp-dev-173949/cc99f640-d33d-11eb-bb9c-0a07c0be2c3a",
       "AmplifyAppId": "d2n9jxcih8ln1v"
+    },
+    "categories": {
+      "auth": {
+        "fgauctionv0": {}
+      }
     }
   }
 }

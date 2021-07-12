@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "fgauctionv0",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authfgauctionv0",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
