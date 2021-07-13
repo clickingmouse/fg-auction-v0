@@ -87,6 +87,7 @@ export const getPropertyDetail = /* GraphQL */ `
       valuation
       startingBid
       address
+      prn
       _version
       _deleted
       _lastChangedAt
@@ -118,6 +119,7 @@ export const listPropertyDetails = /* GraphQL */ `
         valuation
         startingBid
         address
+        prn
         _version
         _deleted
         _lastChangedAt
@@ -158,6 +160,7 @@ export const syncPropertyDetails = /* GraphQL */ `
         valuation
         startingBid
         address
+        prn
         _version
         _deleted
         _lastChangedAt
@@ -333,6 +336,7 @@ export const getProperty = /* GraphQL */ `
       location
       codeName
       district
+      coverPhoto
       _version
       _deleted
       _lastChangedAt
@@ -354,6 +358,7 @@ export const getProperty = /* GraphQL */ `
         valuation
         startingBid
         address
+        prn
         _version
         _deleted
         _lastChangedAt
@@ -385,6 +390,7 @@ export const listPropertys = /* GraphQL */ `
         location
         codeName
         district
+        coverPhoto
         _version
         _deleted
         _lastChangedAt
@@ -424,6 +430,7 @@ export const syncProperties = /* GraphQL */ `
         location
         codeName
         district
+        coverPhoto
         _version
         _deleted
         _lastChangedAt

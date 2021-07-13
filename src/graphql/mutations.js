@@ -85,6 +85,7 @@ export const createPropertyDetail = /* GraphQL */ `
       valuation
       startingBid
       address
+      prn
       _version
       _deleted
       _lastChangedAt
@@ -114,6 +115,7 @@ export const updatePropertyDetail = /* GraphQL */ `
       valuation
       startingBid
       address
+      prn
       _version
       _deleted
       _lastChangedAt
@@ -143,6 +145,7 @@ export const deletePropertyDetail = /* GraphQL */ `
       valuation
       startingBid
       address
+      prn
       _version
       _deleted
       _lastChangedAt
@@ -300,6 +303,7 @@ export const createProperty = /* GraphQL */ `
       location
       codeName
       district
+      coverPhoto
       _version
       _deleted
       _lastChangedAt
@@ -321,6 +325,7 @@ export const createProperty = /* GraphQL */ `
         valuation
         startingBid
         address
+        prn
         _version
         _deleted
         _lastChangedAt
@@ -350,6 +355,7 @@ export const updateProperty = /* GraphQL */ `
       location
       codeName
       district
+      coverPhoto
       _version
       _deleted
       _lastChangedAt
@@ -371,6 +377,7 @@ export const updateProperty = /* GraphQL */ `
         valuation
         startingBid
         address
+        prn
         _version
         _deleted
         _lastChangedAt
@@ -400,6 +407,7 @@ export const deleteProperty = /* GraphQL */ `
       location
       codeName
       district
+      coverPhoto
       _version
       _deleted
       _lastChangedAt
@@ -421,6 +429,7 @@ export const deleteProperty = /* GraphQL */ `
         valuation
         startingBid
         address
+        prn
         _version
         _deleted
         _lastChangedAt

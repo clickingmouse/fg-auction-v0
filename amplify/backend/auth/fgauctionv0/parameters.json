@@ -1,6 +1,6 @@
 {
     "identityPoolName": "testAuthIdentityPool",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "fgauct927ba0c1",
     "userPoolName": "fgauctionv0",
     "autoVerifiedAttributes": [

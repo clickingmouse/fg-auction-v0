@@ -20,7 +20,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import API, {graphqlOperation} from '@aws-amplify/api'
 import { listPropertys, createProperty } from "../graphql/mutations";
 // get fields and call graphql
-const AddProperty = ()=>{
+const AddProperty = ({onAddProperty, fetchProperties})=>{
     const classes = useStyles();
     const [propertyInfo, setPropertyInfo] = useState({
         prn:'',
@@ -65,11 +65,13 @@ const AddProperty = ()=>{
       const handleSubmit = (event) =>{
           event.preventDefault();
           console.log(propertyInfo)
+          fetchProperties()
       }
 
       const addDummy = async ()=>{
         await API.graphql(graphqlOperation(createProperty,{input:dummyData})).then((response)=>{
             console.log(response)
+            fetchProperties()
       })
     }
     return(
@@ -77,30 +79,30 @@ const AddProperty = ()=>{
         Add new property
         
         <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-        <Grid container spacing={2}>
+        <Grid container spacing={1}>
 
-        <Grid item xs={2}>
+        <Grid item xs={1}>
 
         <TextField id="codename" label="codeName" helperText="PRN" variant="filled"/>
         </Grid>
 
-        <Grid item xs={2}>
+        <Grid item xs={1}>
         <TextField id="prn" name='prn' label="PRN" helperText="PRN" variant="filled" fullWidth onChange={handleChange}/>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={1}>
         <TextField id="location" label="location" helperText="PRN" variant="filled"/></Grid>
 
 
 
-        <Grid item xs={2}>
+        <Grid item xs={1}>
         <TextField id="district" label="district" helperText="PRN" variant="filled"/>
         </Grid>
 
-        <Grid item xs={2}>
+        <Grid item xs={1}>
         <TextField id="price" label="price" helperText="PRN" variant="filled"/>
 </Grid>
         
-<Grid item xs={2}>
+<Grid item xs={1}>
         <FormControl className={classes.selectControl}>
         <InputLabel id="bedrooms">Bedrooms</InputLabel>
         <Select
@@ -120,7 +122,7 @@ const AddProperty = ()=>{
         </Select>
       </FormControl >
       </Grid>
-      <Grid item xs={2}>
+      <Grid item xs={1}>
       <FormControl className={classes.selectControl}>
         <InputLabel id="bathrooms">Bathrooms</InputLabel>
         <Select
